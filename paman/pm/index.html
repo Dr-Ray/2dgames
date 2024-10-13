@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+        }
+        .r-app {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        canvas {
+            margin:0 auto;
+            width: 500px;
+            height: 500px;
+        }
+        .up,.down {
+            width: 40px;
+            height: 60px;
+            background-color: aqua;
+        }
+        .left,.right {
+            width: 60px;
+            height: 40px;
+            background-color: aqua;
+        }
+        .d-cover {
+            position: relative;
+            height: 100%;
+        }
+        .d-pad {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+        }
+        .right {
+            position: absolute;
+            right: -20px;
+            top: 30%;
+            text-align: right;
+            transform: translateX(-40%, -40%);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .left {
+            position: absolute;
+            padding-left: 0;
+            top: 30%;
+            transform: translateX(-50%, -50%);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .up {
+            position: absolute;
+            padding-left: 0;
+            top: -10px;
+            left: 40%;
+            text-align: center;
+            transform: translateX(-50%, -50%);
+            cursor: pointer;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .down {
+            position: absolute;
+            text-align: center;
+            padding-left: 0;
+            bottom: -10px;
+            left: 40%;
+            transform: translateX(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            cursor: pointer;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="r-app">
+        <div class="d-cover">
+            <div class="d-pad">
+                <div class="up pad-dir" data-direction="up">
+                    <i class="fa fa-angle-up" data-direction="up"></i>
+                </div>
+                <div class="left pad-dir" data-direction="left">
+                    <i class="fa fa-angle-left" data-direction="left"></i>
+                </div>
+                <div class="right pad-dir" data-direction="right">
+                    <i class="fa fa-angle-right" data-direction="right"></i>
+                </div>
+                <div class="down pad-dir" data-direction="down">
+                    <i class="fa fa-angle-down" data-direction="down"></i>
+                </div>            
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+    
+        <div style="display:none;">
+            <img id="animation" src="animations.gif" width="140" height="20">
+            <img id="ghosts" src="ghost.png" width="140" height="20">
+        </div>
+    </div>
+
+    <script src="./ghost.js"></script>
+    <script src="./pacman.js"></script>
+    <script src="./game.js"></script>
+</body>
+
+</html>

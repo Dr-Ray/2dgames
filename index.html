@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./slick/slick-theme.css">
+    <link rel="stylesheet" href="./slick/slick.css">
+    <script src="./jquery3.6.min.js"></script>
+    <script src="./slick/slick.min.js"></script>
+    <style>
+        *,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: currentColor;
+            text-decoration: none;
+        }
+
+        .r-app {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #431c5b;
+        }
+
+        #games {
+            height: 100%;
+            background-image: url('./castle_clouds_gloomy_126284_3840x2160.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        #games::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            /* background-color: #431c5b; */
+            background-color: #151716;
+            opacity: .5;
+            z-index: 1;
+        }
+
+        .gameArea {
+            width: 600px;
+            height: 100%;
+            /* background-color: #431c5b; */
+            margin: auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .centered {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .d-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .w-400 {
+            width: 400px;
+        }
+
+        .w-600 {
+            width: 600px;
+        }
+
+        .bg-blue {
+            background-color: #431c5b;
+        }
+
+        .slider-items a {
+            margin: 0 10px;
+        }
+
+        @media screen and (max-width:400px) {}
+    </style>
+</head>
+
+<body>
+    <div class="r-app">
+        <div id="games">
+            <div class="gameArea centered">
+                <div class="" style="position:relative; z-index: 2;">
+                    <h2 class="text-center">Select game</h2>
+                    <div class="slider-items w-600 mx-auto ">
+                        <a href="./paman/pm/" class="d-col justify-center items-center bg-blue" style="height: 150px; border-radius:10px;">
+                            <img src="./assets/giphy.gif"
+                                style="width:100%;height: 130px; object-fit: cover; border-radius:10px;" alt="">
+                            <div class="mx-auto centered text-white text-sm">
+                                Pacman
+                            </div>
+                        </a>
+                        <a href="#" class="d-col justify-center items-center bg-blue" style="height: 150px; border-radius:10px;">
+                            <img src="./assets/giphy-mole.gif" style="width:100%;height: 130px; object-fit: cover; border-radius:10px;" alt="">
+                            <div class="mx-auto centered text-white text-sm">
+                                Mole Whack
+                            </div>
+                        </a>
+                        <a href="#" class="d-col justify-center items-center bg-blue" style="height: 150px; border-radius:10px;">
+                            <img src="./assets/giphy.gif"
+                                style="width:100%;height: 130px; object-fit: cover; border-radius:10px;" alt="">
+                            <div class="mx-auto centered text-white text-sm">
+                                Pacman
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $('.slider-items').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: false,
+            dots: true,
+            centerMode: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 400,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+        // const container = document.querySelector("#games");
+        // container.requestFullscreen().catch((error) => {
+        //     console.log(error)
+        // });
+        // let log = document.querySelector('#log');
+        // let oppositeOrientation = 'landscape-primary';
+        // window.onload = () => {
+        //     screen.orientation
+        //         .lock(oppositeOrientation)
+        //         .then(() => {
+        //             log.textContent = `Locked to ${oppositeOrientation}\n`;
+        //         })
+        //         .catch((error) => {
+        //             log.textContent += `${error}\n`;
+        //         });
+        // }
+        // screen.orientation.addEventListener("change", () => {
+        //     console.log(`The orientation of the screen is: ${}`);
+        // });
+    </script>
+</body>
+
+</html>
